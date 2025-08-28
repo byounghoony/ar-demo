@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Model Viewer AR Demo</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>body { margin: 0; }</style>
+</head>
+<body>
+  <model-viewer src="model.gltf"
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                camera-controls
+                auto-rotate
+                style="width: 100vw; height: 100vh;"
+                ar-scale="fixed"
+                ar-placement="floor">
+  </model-viewer>
+</body>
+</html>
