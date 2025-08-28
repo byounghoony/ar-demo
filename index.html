@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <title>Model Viewer AR Demo</title>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>body { margin: 0; }</style>
+  <style>
+    body { margin: 0; }
+
+    /* AR 버튼 스타일 */
+    model-viewer::part(default-ar-button) {
+      width: 100px;   /* 버튼 너비 */
+      height: 100px;  /* 버튼 높이 */
+      border-radius: 50%; /* 둥글게 */
+      background-color: #ff6600; /* 색상 변경 */
+      border: none;
+    }
+  </style>
 </head>
 <body>
   <model-viewer src="model.gltf"
