@@ -9,7 +9,7 @@
 
     /* AR 버튼 스타일 */
     model-viewer::part(default-ar-button) {
-      position: fixed;   /* absolute → fixed로 변경 */
+      position: fixed;
       bottom: 20px;
       right: 20px;
       width: 90px;
@@ -34,14 +34,14 @@
               ar-placement="floor">
 </model-viewer>
 <script>
+  const mv = document.querySelector("model-viewer");
   window.addEventListener("resize", () => resize());
+  mv.addEventListener("load", () => resize());
 
   function resize(){
-    const mv = document.querySelector("model-viewer");
     mv.style.width = window.innerWidth + "px";
     mv.style.height = window.innerHeight + "px";
   };
-  resize();
 </script>
 </body>
 </html>
