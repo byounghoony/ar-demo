@@ -9,26 +9,37 @@
 
     /* AR 버튼 스타일 */
     model-viewer::part(default-ar-button) {
-      width: 100px;   /* 버튼 너비 */
-      height: 100px;  /* 버튼 높이 */
-      border-radius: 50%; /* 둥글게 */
-      background-color: red; /* 색상 변경 */
-      border: none;
+      position: fixed;   /* absolute → fixed로 변경 */
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #ff6600;
+      z-index: 999;
     }
     
     .arBtn { width: 100px; height: 100px; border-radius: 50%; background-color: #000; }
   </style>
 </head>
 <body>
-  <model-viewer src="model.gltf"
-                ios-src="model.usdz" 
-                ar
-                ar-modes="webxr scene-viewer quick-look"
-                camera-controls
-                auto-rotate
-                style="width: 100vw; height: 100vh;"
-                ar-scale="fixed"
-                ar-placement="floor">
-  </model-viewer>
+<model-viewer src="model.gltf"
+              ios-src="model.usdz" 
+              ar
+              ar-modes="webxr scene-viewer quick-look"
+              camera-controls
+              auto-rotate
+              style="width: 100vw; height: 100vh;"
+              ar-scale="fixed"
+              ar-placement="floor">
+</model-viewer>
+<script>
+  window.addEventListener("resize", () => {
+    const mv = document.querySelector("model-viewer");
+    mv.style.width = window.innerWidth + "px";
+    mv.style.height = window.innerHeight + "px";
+  });
+</script>
 </body>
 </html>
